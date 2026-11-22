@@ -1,253 +1,361 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Liam Abraham</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Liam Abraham : étudiant en cybersécurité à Epitech Nice</title>
+  <meta name="description" content="CV de Liam Abraham, en Bachelor Cybersécurité à Epitech Nice. Pentest web, sécurité des IA, automatisation et développement React. Cherche une alternance à partir de septembre 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Liam Abraham, étudiant en cybersécurité">
+  <meta property="og:description" content="Bachelor Cybersécurité à Epitech Nice, alternance recherchée dès septembre 2027.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0f0f12">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
-
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">Liam Abraham</div>
-      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
-      <nav>
-        <ul>
-          <li><a href="#about">Profil</a></li>
-          <li><a href="#experience">Expérience</a></li>
-          <li><a href="#education">Parcours</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  <a class="skip" href="#top">Aller au contenu</a>
+
+  <header class="nav">
+    <div class="wrap nav__bar">
+      <a class="logo" href="#top" aria-label="Liam Abraham, retour en haut">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="4"/><path d="m7 10 3 2.5L7 15M12.5 15H17"/></svg>
+        <span>liam<b>.sec</b></span>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#stack">Stack</a>
+        <a href="#projets">Projets</a>
+        <a href="#experience">Expérience</a>
+        <a href="#parcours">Parcours</a>
       </nav>
+      <div class="nav__actions">
+        <a class="nav__ghost" href="https://github.com/Liam-tech0">GitHub</a>
+        <a class="btn btn--primary btn--sm" href="mailto:abrahamliamo6@gmail.com">Me contacter</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="about">
-      <div>
-        <p>Étudiant EPITECH · Sauveteur · Passionné de tech</p>
-        <h1>Je conçois des expériences numériques fiables et humaines.</h1>
-        <p>
-          Basé à Nice, je combine rigueur acquise dans le sauvetage et événements
-          premium avec une passion grandissante pour le développement logiciel,
-          l'algorithmie et les projets innovants.
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="wrap hero__inner">
+        <p class="pill enter" style="--d:0">
+          <span class="live-dot" aria-hidden="true"></span>
+          Alternance recherchée · septembre 2027
         </p>
-        <div class="cta-group">
-          <a class="btn btn-primary" href="mailto:abrahamliamo6@gmail.com">Me contacter</a>
-          <a class="btn btn-outline" href="https://github.com/Liam-tech0">GitHub</a>
+        <h1 id="hero-h" class="enter" style="--d:1">
+          Étudiant en <span class="accent">cybersécurité</span>.<br>
+          Epitech Nice.
+        </h1>
+        <p class="hero__lead enter" style="--d:2">
+          Pentest web, durcissement de LLM locaux, agents IA et sites en React.
+          Je cherche une alternance cyber pour l'année 2027-2028.
+        </p>
+        <div class="hero__cta enter" style="--d:3">
+          <a class="btn btn--primary" href="mailto:abrahamliamo6@gmail.com">Me contacter</a>
+          <a class="btn btn--ghost" href="#projets">Voir mes projets</a>
         </div>
       </div>
-      <div class="profile-card">
-        <h3>À propos</h3>
-        <p>
-          Curieux, discipliné et orienté solution, je cherche une alternance ou un stage
-          pour contribuer à des projets tech ambitieux tout en renforçant mes compétences
-          en développement (Python, JS, PHP, HTML/CSS) et en méthodologies collaboratives.
+
+      <!-- Tableau de bord façon terminal -->
+      <div class="wrap">
+        <div class="board enter" style="--d:4" role="region" aria-label="Aperçu : ce que je fais, mes projets, mon parcours">
+          <div class="board__col">
+            <div class="board__head">
+              <span>En ce moment</span>
+              <span class="tag tag--live"><span class="live-dot" aria-hidden="true"></span>Live</span>
+            </div>
+            <ul class="feed" data-feed>
+              <li class="row">
+                <span class="row__av row__av--red" aria-hidden="true">RT</span>
+                <span class="row__main"><b>Red team / Blue team</b><small>Exercices d'attaque et de défense</small></span>
+                <span class="row__meta up">Offensif</span>
+              </li>
+              <li class="row">
+                <span class="row__av row__av--blue" aria-hidden="true">WEB</span>
+                <span class="row__main"><b>Pentest web</b><small>Failles OWASP courantes</small></span>
+                <span class="row__meta up">OWASP</span>
+              </li>
+              <li class="row">
+                <span class="row__av" aria-hidden="true"><img src="icons/ollama.svg" alt="" class="ink"></span>
+                <span class="row__main"><b>Sécurité des IA</b><small>Injection de prompt, LLM locaux</small></span>
+                <span class="row__meta warn">Ollama</span>
+              </li>
+              <li class="row">
+                <span class="row__av" aria-hidden="true"><img src="icons/linux.svg" alt=""></span>
+                <span class="row__main"><b>CTF Linux</b><small>Élévation de privilèges</small></span>
+                <span class="row__meta up">root</span>
+              </li>
+              <li class="row">
+                <span class="row__av" aria-hidden="true"><img src="icons/n8n.svg" alt=""></span>
+                <span class="row__main"><b>Automatisation</b><small>Agents IA et workflows n8n</small></span>
+                <span class="row__meta blue">n8n</span>
+              </li>
+            </ul>
+          </div>
+          <div class="board__col">
+            <div class="board__head"><span>Projets</span><span class="tag">GitHub</span></div>
+            <ul class="feed">
+              <li class="row">
+                <span class="row__av" aria-hidden="true"><img src="icons/typescript.svg" alt=""></span>
+                <span class="row__main"><b>tax-calculator-2025</b><small>Cotisations auto-entrepreneur</small></span>
+                <span class="row__meta up">React 19</span>
+              </li>
+              <li class="row">
+                <span class="row__av" aria-hidden="true"><img src="icons/nextdotjs.svg" alt="" class="ink"></span>
+                <span class="row__main"><b>launch-scale-site</b><small>Site vitrine 3D + API YouTube</small></span>
+                <span class="row__meta blue">Three.js</span>
+              </li>
+            </ul>
+          </div>
+          <div class="board__col board__col--hide-sm">
+            <div class="board__head"><span>Parcours</span><span class="tag">2021 → 2027</span></div>
+            <ul class="feed">
+              <li class="row">
+                <span class="row__av row__av--mint" aria-hidden="true">E</span>
+                <span class="row__main"><b>Bachelor Cybersécurité</b><small>Epitech Nice · en cours</small></span>
+                <span class="row__meta up">2027</span>
+              </li>
+              <li class="row">
+                <span class="row__av row__av--blue" aria-hidden="true">UCA</span>
+                <span class="row__main"><b>Licence MIASHS</b><small>Université Côte d'Azur</small></span>
+                <span class="row__meta">2025</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <nav class="dock" aria-label="Navigation rapide">
+        <a href="#top" data-dock="top">Profil</a>
+        <a href="#projets" data-dock="projets">Projets</a>
+        <a href="#experience" data-dock="experience">Expérience</a>
+        <a href="#contact" data-dock="contact">Contact</a>
+      </nav>
+    </section>
+
+    <!-- POURQUOI MOI : texte qui s'allume mot par mot -->
+    <section class="section statement" aria-labelledby="why-h">
+      <div class="wrap">
+        <h2 id="why-h" class="kicker">Pourquoi moi</h2>
+        <p class="reveal" data-reveal>
+          Plusieurs saisons de sauvetage en mer m'ont appris à garder la tête froide quand tout s'accélère.
+          Aujourd'hui je mets ces réflexes au service de la sécurité :
+          <em>repérer la faille</em> avant qu'elle ne coûte cher, et expliquer simplement comment la corriger.
         </p>
-        <div class="chip-row">
-          <span class="chip">Rigueur & sécurité</span>
-          <span class="chip">Gestion du stress</span>
-          <span class="chip">Adaptation</span>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="section" id="stack" aria-labelledby="stack-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="stack-h">Ma stack. <span class="muted">Ce que j'utilise vraiment.</span></h2>
+        </div>
+        <div class="stack">
+          <div class="stack__group">
+            <h3>Sécurité et systèmes</h3>
+            <ul class="tiles">
+              <li class="tile spot"><img src="icons/linux.svg" alt=""><span>Linux</span></li>
+              <li class="tile spot"><span class="tile__txt" aria-hidden="true">W</span><span>Wazuh</span></li>
+              <li class="tile spot"><span class="tile__txt" aria-hidden="true">Ex</span><span>Exegol</span></li>
+              <li class="tile spot"><img src="icons/ollama.svg" alt="" class="ink"><span>Ollama</span></li>
+              <li class="tile spot"><img src="icons/n8n.svg" alt="" class="wide"><span>n8n</span></li>
+              <li class="tile spot"><img src="icons/git.svg" alt=""><span>Git</span></li>
+              <li class="tile spot"><img src="icons/github.svg" alt="" class="ink"><span>GitHub</span></li>
+            </ul>
+          </div>
+          <div class="stack__group">
+            <h3>Langages et web</h3>
+            <ul class="tiles">
+              <li class="tile spot"><img src="icons/typescript.svg" alt=""><span>TypeScript</span></li>
+              <li class="tile spot"><img src="icons/javascript.svg" alt=""><span>JavaScript</span></li>
+              <li class="tile spot"><img src="icons/react.svg" alt=""><span>React</span></li>
+              <li class="tile spot"><img src="icons/nextdotjs.svg" alt="" class="ink"><span>Next.js</span></li>
+              <li class="tile spot"><img src="icons/openjdk.svg" alt="" class="ink"><span>Java</span></li>
+              <li class="tile spot"><img src="icons/swift.svg" alt=""><span>Swift</span></li>
+              <li class="tile spot"><img src="icons/python.svg" alt=""><span>Python</span></li>
+              <li class="tile spot"><img src="icons/php.svg" alt="" class="wide"><span>PHP</span></li>
+              <li class="tile spot"><img src="icons/html5.svg" alt=""><span>HTML</span></li>
+              <li class="tile spot"><img src="icons/css.svg" alt=""><span>CSS</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experience">
-      <div class="section-heading">
-        <h2>Expérience</h2>
-        <span>Hospitality premium · Sécurité · Coordination</span>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>Château Eza — Èze</h3>
-          <small>Commis & Chef de Pass · Avril 2025</small>
-          <p>
-            Immersion dans une cuisine 1★ Michelin : mise en place, coordination du pass et
-            respect strict des standards d'hygiène et de service haut de gamme.
-          </p>
-          <div class="chip-row">
-            <span class="chip">Cuisine gastronomique</span>
-            <span class="chip">Communication salle/cuisine</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Yacht Club de Monaco</h3>
-          <small>Surveillant, Plagiste & Barman · 2023-2024</small>
-          <p>
-            Gestion intégrale de l'espace piscine, surveillance des membres, interventions de
-            secours et service bar lors des saisons estivales exigeantes.
-          </p>
-          <div class="chip-row">
-            <span class="chip">Secours</span>
-            <span class="chip">Relationnel haut de gamme</span>
-            <span class="chip">Polyvalence</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Grand Prix & Yacht Show</h3>
-          <small>Extras événementiels · Monaco</small>
-          <p>
-            Renforts en salle et au bar, accueil des invités VIP et coordination dans un
-            environnement international à très haute exigence.
-          </p>
-          <div class="chip-row">
-            <span class="chip">Événementiel</span>
-            <span class="chip">Service premium</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Pompier de Nice</h3>
-          <small>Sauveteur & Surveillant de baignade · Été 2022</small>
-          <p>
-            Sécurisation des plages, interventions aquatiques et sensibilisation aux
-            règles de sécurité pour le grand public.
-          </p>
-          <div class="chip-row">
-            <span class="chip">BNSSA</span>
-            <span class="chip">Gestion d'urgence</span>
-          </div>
-        </article>
+    <!-- PROJETS -->
+    <section class="section" id="projets" aria-labelledby="projets-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="projets-h">Projets publics. <span class="muted">Le code est sur GitHub.</span></h2>
+        </div>
+        <div class="projects">
+          <a class="project spot" href="https://github.com/Liam-tech0/tax-calculator-2025">
+            <div class="term" aria-hidden="true">
+              <div class="term__bar"><i></i><i></i><i></i><span>tax-calculator-2025</span></div>
+              <pre class="term__body" data-type-lines>
+<span class="c-dim">$</span> npm run dev
+<span class="c-mint">✓</span> Vite prêt en 312 ms
+<span class="c-dim">›</span> Chiffre d'affaires : <b>42 000 €</b>
+<span class="c-dim">›</span> Activité : prestation de services
+<span class="c-dim">›</span> URSSAF (barème 2025) calculé
+<span class="c-warn">!</span> Seuil de franchise TVA proche</pre>
+            </div>
+            <div class="project__body">
+              <h3>Calcule ce que paie un auto-entrepreneur</h3>
+              <p>Cotisations URSSAF, impôt et seuils de TVA en temps réel, avec les barèmes 2025.</p>
+              <ul class="chips"><li>React 19</li><li>TypeScript strict</li><li>Vite</li><li>Tailwind v4</li></ul>
+              <span class="project__link">Voir le dépôt <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="project spot" href="https://github.com/Liam-tech0/launch-scale-site">
+            <div class="term" aria-hidden="true">
+              <div class="term__bar"><i></i><i></i><i></i><span>launch-scale-site</span></div>
+              <pre class="term__body" data-type-lines>
+<span class="c-dim">$</span> next dev
+<span class="c-mint">✓</span> Scène 3D chargée (Three.js)
+<span class="c-dim">›</span> GET /api/youtube <span class="c-mint">200</span>
+<span class="c-dim">›</span> Clé API gardée côté serveur
+<span class="c-dim">›</span> Objectif challenge : 1 M€
+<span class="c-mint">✓</span> Prêt sur localhost:3000</pre>
+            </div>
+            <div class="project__body">
+              <h3>Monte un site vitrine animé en 3D</h3>
+              <p>Une page unique avec fond Three.js, effets glitch et vidéos YouTube récupérées par une route API.</p>
+              <ul class="chips"><li>Next.js</li><li>React Three Fiber</li><li>Framer Motion</li><li>YouTube API</li></ul>
+              <span class="project__link">Voir le dépôt <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="education">
-      <div class="section-heading">
-        <h2>Parcours académique & formations</h2>
-        <span>Innovation tech · Sciences · Santé</span>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>Bachelor EPITECH Technology</h3>
-          <small>Nice · 2024 — 2027 (en cours)</small>
-          <p>
-            Développement logiciel, algorithmie, innovation et projets collaboratifs dans un
-            environnement orienté solution.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Licence MIASHS</h3>
-          <small>Université Côte d'Azur · 2023 — 2025</small>
-          <p>
-            Options Mathématiques, Informatique, Management, Économie, IA.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Licence LAS (Accès Santé)</h3>
-          <small>2022 — 2023</small>
-          <p>Parcours orienté pharmacologie, médecine et ingénierie.</p>
-        </article>
-        <article class="card">
-          <h3>Baccalauréat STI2D</h3>
-          <small>2021 — 2022</small>
-          <p>Spécialités Physique, Mathématiques et Ingénierie.</p>
-        </article>
-      </div>
-      <div class="section-heading cert-heading">
-        <h2>Certifications clés</h2>
-        <span>Secourisme & Leadership</span>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>BNSSA & SBAN</h3>
-          <small>2020 — 2022</small>
-          <p>Surveillance de baignade, interventions aquatiques et prévention des risques.</p>
-        </article>
-        <article class="card">
-          <h3>PSE1 · PSE2</h3>
-          <small>Secourisme pour Tous — Nice</small>
-          <p>Premiers secours en équipe : protocoles d'urgence, coordination terrain.</p>
-        </article>
-        <article class="card">
-          <h3>Préparation Militaire Marine</h3>
-          <small>Caserne Filley · 2020 — 2021</small>
-          <p>Valeurs Marines, discipline, entraînement physique et cérémonial.</p>
-        </article>
+    <!-- EXPÉRIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="exp-h">Expérience terrain. <span class="muted">Sécurité, urgence et service haut de gamme.</span></h2>
+        </div>
+        <div class="exp">
+          <article class="job spot">
+            <img class="job__img" src="img/photo-f186710439-500.jpg" alt="Plage de galets de Nice au coucher du soleil, avec un poste de secours" loading="lazy">
+            <div class="job__body">
+              <div class="job__top"><h3>Pompiers de Nice</h3><span class="tag tag--up">Été 2022</span></div>
+              <p class="job__role">Sauveteur et surveillant de baignade</p>
+              <p>Surveillance des plages, interventions dans l'eau et prévention auprès du public.</p>
+              <ul class="chips"><li>BNSSA</li><li>Gestion d'urgence</li></ul>
+            </div>
+          </article>
+          <article class="job spot">
+            <img class="job__img" src="img/photo-f186436329-500.jpg" alt="Le port Hercule de Monaco et ses yachts, sous le Rocher" loading="lazy">
+            <div class="job__body">
+              <div class="job__top"><h3>Yacht Club de Monaco</h3><span class="tag tag--up">2023 – 2024</span></div>
+              <p class="job__role">Surveillant, plagiste et barman</p>
+              <p>Gestion de l'espace piscine, surveillance des membres, secours et service au bar l'été.</p>
+              <ul class="chips"><li>Secours</li><li>Clientèle exigeante</li></ul>
+            </div>
+          </article>
+          <article class="job spot">
+            <img class="job__img" src="img/photo-f175543884-500.jpg" alt="Tribunes bleues le long du circuit de Monaco" loading="lazy">
+            <div class="job__body">
+              <div class="job__top"><h3>Grand Prix et Yacht Show</h3><span class="tag tag--up">Monaco</span></div>
+              <p class="job__role">Extra en événementiel</p>
+              <p>Renfort en salle et au bar, accueil d'invités VIP dans un cadre international.</p>
+              <ul class="chips"><li>Événementiel</li><li>Coordination</li></ul>
+            </div>
+          </article>
+          <article class="job spot">
+            <span class="job__img job__img--txt" aria-hidden="true">1★</span>
+            <div class="job__body">
+              <div class="job__top"><h3>Château Eza, Èze</h3><span class="tag tag--up">Avril 2025</span></div>
+              <p class="job__role">Commis et chef de pass</p>
+              <p>Cuisine étoilée Michelin : mise en place, coordination du pass, hygiène stricte.</p>
+              <ul class="chips"><li>Rigueur</li><li>Communication salle / cuisine</li></ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="skills">
-      <div class="section-heading">
-        <h2>Compétences</h2>
-        <span>Tech · Soft skills · Langues</span>
-      </div>
-      <div class="grid">
-        <article class="card timeline">
-          <div class="timeline-item">
-            <h3>Développement</h3>
-            <small>HTML / CSS · JavaScript · Python · PHP</small>
-            <p>Création de pages web, scripts, logique algorithmique et premières APIs.</p>
+    <!-- PARCOURS -->
+    <section class="section" id="parcours" aria-labelledby="parcours-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="parcours-h">Parcours et certifications. <span class="muted">Des sciences au code.</span></h2>
+        </div>
+        <div class="path">
+          <ol class="timeline">
+            <li class="is-now">
+              <span class="timeline__date">2024 – 2027</span>
+              <h3>Bachelor Cybersécurité · Epitech Nice</h3>
+              <p>Sécurité offensive et défensive, développement, projets en équipe. En cours.</p>
+            </li>
+            <li>
+              <span class="timeline__date">2023 – 2025</span>
+              <h3>Licence MIASHS · Université Côte d'Azur</h3>
+              <p>Mathématiques, informatique, économie, management et IA.</p>
+            </li>
+            <li>
+              <span class="timeline__date">2022 – 2023</span>
+              <h3>Licence Accès Santé (LAS)</h3>
+              <p>Pharmacologie, médecine et ingénierie.</p>
+            </li>
+            <li>
+              <span class="timeline__date">2021 – 2022</span>
+              <h3>Baccalauréat STI2D</h3>
+              <p>Physique, mathématiques et ingénierie.</p>
+            </li>
+          </ol>
+          <div class="side">
+            <div class="panel spot">
+              <h3>Certifications</h3>
+              <ul class="list">
+                <li><b>BNSSA et SBAN</b><span>Sauvetage aquatique · 2020 – 2022</span></li>
+                <li><b>PSE1 et PSE2</b><span>Premiers secours en équipe · Nice</span></li>
+                <li><b>Préparation militaire Marine</b><span>Caserne Filley · 2020 – 2021</span></li>
+              </ul>
+            </div>
+            <div class="panel spot">
+              <h3>Langues</h3>
+              <ul class="list">
+                <li><b>Français</b><span>Langue maternelle</span></li>
+                <li><b>Hongrois</b><span>Bilingue · 3 ans en Hongrie</span></li>
+                <li><b>Anglais</b><span>Courant</span></li>
+                <li><b>Allemand</b><span>Notions</span></li>
+              </ul>
+            </div>
           </div>
-          <div class="timeline-item">
-            <h3>Outils</h3>
-            <small>Git / GitHub · Linux</small>
-            <p>Gestion de versions, travail en équipe et maîtrise de l'environnement terminal.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Compétences fortes</h3>
-            <p>Gestion des urgences, travail d'équipe, discipline, rigueur et adaptabilité.</p>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Langues & ouverture</h3>
-          <p>
-            Anglais courant, bilingue hongrois, notions d'allemand. Séjour linguistique de trois
-            ans en Hongrie (2018-2020).
-          </p>
-          <div class="chip-row">
-            <span class="chip">Interculturel</span>
-            <span class="chip">Communication</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Soft skills</h3>
-          <p>
-            Leadership terrain, sens des responsabilités, gestion du stress, communication fluide
-            entre équipes techniques et opérationnelles.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-heading">
-        <h2>Entrons en contact</h2>
-        <span>Disponible pour stage, alternance ou missions freelances</span>
-      </div>
-      <div class="profile">
-        <article class="profile-card contact-card">
-          <div class="contact-item">
-            <span>E-mail</span>
-            <a href="mailto:abrahamliamo6@gmail.com">abrahamliamo6@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span>Ville</span>
-            <p>Nice, France</p>
-          </div>
-        </article>
-        <article class="profile-card">
-          <h3>Motivation</h3>
-          <p>
-            « Je veux mettre l'énergie, la rigueur et les réflexes que j'ai développés dans
-            le sauvetage et l'événementiel au service d'équipes tech ambitieuses. Comprendre,
-            tester et construire : voilà ce qui me motive au quotidien. »
-          </p>
-        </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> Liam Abraham · Nice · FR
+  <!-- CONTACT + FOOTER -->
+  <footer class="closing" id="contact" aria-labelledby="contact-h">
+    <div class="closing__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="closing__cta">
+        <h2 id="contact-h">Une alternance cyber <span class="accent">en 2027</span> ?</h2>
+        <p>Basé à Nice, disponible pour un rythme alternance dès septembre 2027.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:abrahamliamo6@gmail.com">Me contacter</a>
+          <a class="btn btn--ghost" href="https://github.com/Liam-tech0">Voir mon GitHub</a>
+        </div>
+      </div>
+      <div class="footer">
+        <span>© <span data-year>2026</span> Liam Abraham · Nice, France</span>
+        <a class="credits" href="credits.html">Photos via Wikimedia Commons · logos : marques de leurs propriétaires</a>
+      </div>
+    </div>
   </footer>
 
-  <script src="./app.js"></script>
+  <script src="app.js" defer></script>
 </body>
-
 </html>
-
