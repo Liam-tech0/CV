@@ -93,5 +93,13 @@ const setActive = () => {
 addEventListener("scroll", setActive, { passive: true });
 setActive();
 
-// 8. Année du footer
+// 8. Vidéos de sport : lecture seulement quand elles sont à l'écran (et jamais si l'utilisateur veut moins d'animations)
+if (!calm) {
+  const vio = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause()));
+  }, { threshold: 0.25 });
+  document.querySelectorAll("video[data-autoplay]").forEach((v) => vio.observe(v));
+}
+
+// 9. Année du footer
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
